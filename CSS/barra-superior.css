@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --altura: 100px;
+  --bgColor: orange;
+  --fontColor: red;
+}
+
+.barra-superior {
+  width: 100%;
+  height: var(--altura);
+  background-color: var(--bgColor);
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.barra-superior img {
+  display: block;
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  transform: translateX(100px);
+}
+
+.links {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  position: absolute;
+  right: 0;
+}
+
+.links li {
+  width: auto;
+  height: var(--altura);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links li:hover {
+  background-color: rgb(255, 182, 47);
+  text-decoration: underline red;
+}
+
+.links a {
+  color: var(--fontColor);
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.aba {
+  position: absolute;
+  background-color: black;
+  color: white;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  border-bottom: 5px red solid;
+  padding: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  text-align: center;
+}
+
+.aba ul {
+  list-style: none;
+}
+
+.aba a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+.aba a:hover {
+  text-decoration: underline;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+@keyframes aba_abrindo {
+  from {
+    height: 0;
+    padding: 0;
+  }
+
+  to {
+    height: 270px;
+  }
+}
+
+@keyframes aba_fechando {
+  from {
+    height: 270px;
+  }
+  to {
+    height: 0;
+    padding: 0;
+  }
+}
